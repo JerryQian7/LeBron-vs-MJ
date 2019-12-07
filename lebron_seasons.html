@@ -1,0 +1,39 @@
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    exporting:{enabled:false},
+    title: {
+        text: 'Lebron Seasons Won vs Lost'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Seasons',
+        colorByPoint: true,
+        data: [{
+            name: 'MJ PER',
+            color: "#FF0000",
+            y: 27.91,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'LBJ PER',
+            y: 27.58
+        }]
+    }]
+});
