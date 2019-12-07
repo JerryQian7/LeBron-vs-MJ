@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        
+    </p>
+</figure>
+    
+</head>
+<body>
+    <script>
+        Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Clutch Time Performance in Rebounds and Assists'
+    },
+    subtitle: {
+        text: 'Source: howtheyplay.com'
+    },
+    xAxis: {
+        categories: [
+            'Total Assists - Michael Jordan',
+            'Total Rebounds - Michael Jordan',
+            'Total Assists - LeBron James',
+            'Total Rebounds - LeBron James'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 3,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        },series: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    series: [{
+        name: 'Career',
+        data: [5.3, 6.2, 7.2, 7.4]
+
+    }, {
+        name: 'Eliminating Opponents',
+        data: [3.2, 4.8, 7.6, 8.7]
+
+    }, {
+        name: 'Facing Eliminaton',
+        data: [7, 7.9, 9, 13]
+
+    }]
+});
+        
+    </script>
+
+    
+</body>
+</html>
+

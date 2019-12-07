@@ -1,0 +1,81 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Bar chart showing horizontal columns. This chart type is often
+        beneficial for smaller screens, as the user can scroll through the data
+        vertically, and axis labels are easy to read.
+    </p>
+</figure>
+<script>
+
+        Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'MJ Seasons vs LeBron Seasons'
+    },
+    subtitle: {
+        text: 'Source: <a href="https://www.basketball-reference.com/">basketball-reference.com'
+    },
+ exporting:{enabled:false},
+    xAxis: {
+        categories: ['PER', 'eFG%', 'FG%'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Average Per Season',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: 'percentage'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 120,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'LeBron James',
+        color: '#000000',
+        data: [.207, .521,.775],
+      
+    }, {
+        name: 'Michael Jordan',
+         color: '#FF0000',
+        data: [.189, .484,.760]
+    }]
+});
+        
+    
+</script>
